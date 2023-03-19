@@ -14,6 +14,7 @@ import Modal from 'react-native-modal';
 import DropDownPicker from 'react-native-dropdown-picker'
 import * as api from "../api/api";
 import Loader from "../Components/Loader";
+import Svg, { Path } from "react-native-svg"
 
 const InfoScreen = ({ navigation, route }) => {
   const [branch, setBranch] = useState(route.params.branch)
@@ -55,6 +56,7 @@ const InfoScreen = ({ navigation, route }) => {
   }
 
   const handleSubmitPress = async() => {
+    alert(serviceLevelValue)
     setErrortext(null);
     if (!phoneNo) {
       alert("حقل الهاتف اجباري");
@@ -171,7 +173,7 @@ const InfoScreen = ({ navigation, route }) => {
             returnKeyType="next"
           />
         </View>
-        <View style={styles.labelStyle}>
+        {/* <View style={styles.labelStyle}>
           <Text style={{width:'100%',paddingRight:10,color: "#790252",fontSize:15}}>
             مستوى الخدمة
           </Text>
@@ -194,6 +196,99 @@ const InfoScreen = ({ navigation, route }) => {
               listMode="FLATLIST"
               zIndex={3000}
             />
+        </View> */}
+        <View style={styles.SectionStyle2}>
+          {serviceLevelValue?
+            <>
+              {serviceLevelValue == 'راضي'?
+                <TouchableOpacity
+                  onPress={() => setServiceLevelValue('راضي')}
+                >
+                  <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={150}
+                    height={150}
+                    viewBox="0 0 24 24"
+                    fill="green"
+                  >
+                    <Path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm3.501 10C9.2 18 7.127 16.154 6 14.434l.493-.493c1.512 1.195 3.174 1.931 5.508 1.931 2.333 0 3.994-.736 5.506-1.931l.493.493C16.873 16.154 14.801 18 12.001 18z" />
+                  </Svg>
+                </TouchableOpacity>
+              :
+                <TouchableOpacity
+                  onPress={() => setServiceLevelValue('راضي')}
+                >
+                  <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={150}
+                    height={150}
+                    viewBox="0 0 24 24"
+                    fill="green"
+                  >
+                    <Path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931L6 14.434C7.127 16.154 9.2 18 12.001 18c2.8 0 4.872-1.846 5.999-3.566l-.493-.493zM8.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                  </Svg>
+                </TouchableOpacity>
+              }
+              {serviceLevelValue == 'غير راضي'?
+                <TouchableOpacity
+                  onPress={() => setServiceLevelValue('غير راضي')}
+                >
+                  <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={150}
+                    height={150}
+                    viewBox="0 0 24 24"
+                    fill="red"
+                  >
+                    <Path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm8.122 9.377c-1.286-.819-2.732-1.308-4.622-1.308s-3.336.489-4.622 1.308l-.471-.58C7.855 15.636 9.668 14 12 14s4.145 1.636 5.093 2.797l-.471.58z" />
+                  </Svg>
+                </TouchableOpacity>
+              :
+                <TouchableOpacity
+                  onPress={() => setServiceLevelValue('غير راضي')}
+                >
+                  <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={150}
+                    height={150}
+                    viewBox="0 0 24 24"
+                    fill="red"
+                  >
+                    <Path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58C16.146 15.636 14.333 14 12.001 14zM8.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                  </Svg>
+                </TouchableOpacity>
+              }
+            </>
+          :
+            <>
+              <TouchableOpacity
+                onPress={() => setServiceLevelValue('راضي')}
+              >
+                <Svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={150}
+                  height={150}
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <Path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931L6 14.434C7.127 16.154 9.2 18 12.001 18c2.8 0 4.872-1.846 5.999-3.566l-.493-.493zM8.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                </Svg>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setServiceLevelValue('غير راضي')}
+              >
+                <Svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={150}
+                  height={150}
+                  viewBox="0 0 24 24"
+                  fill="red"
+                >
+                  <Path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58C16.146 15.636 14.333 14 12.001 14zM8.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                </Svg>
+              </TouchableOpacity>
+            </>
+          }
         </View>
         {errortext != "" ? (
           <Text style={styles.errorTextStyle}>{errortext}</Text>
@@ -238,6 +333,14 @@ const styles = StyleSheet.create({
     marginLeft: 35,
     marginRight: 35,
     // margin: 10,
+  },
+  SectionStyle2: {
+    flexDirection: "row",
+    justifyContent:'space-around',
+    marginBottom: 20,
+    marginLeft: 35,
+    marginRight: 35,
+    margin: 10,
   },
   buttonStyle: {
     backgroundColor: "#790252",
