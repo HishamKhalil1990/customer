@@ -56,7 +56,6 @@ const InfoScreen = ({ navigation, route }) => {
   }
 
   const handleSubmitPress = async() => {
-    alert(serviceLevelValue)
     setErrortext(null);
     if (!phoneNo) {
       alert("حقل الهاتف اجباري");
