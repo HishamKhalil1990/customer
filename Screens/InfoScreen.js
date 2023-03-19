@@ -205,8 +205,8 @@ const InfoScreen = ({ navigation, route }) => {
                 >
                   <Svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={150}
-                    height={150}
+                    width={80}
+                    height={80}
                     viewBox="0 0 24 24"
                     fill="green"
                   >
@@ -219,8 +219,8 @@ const InfoScreen = ({ navigation, route }) => {
                 >
                   <Svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={150}
-                    height={150}
+                    width={80}
+                    height={80}
                     viewBox="0 0 24 24"
                     fill="green"
                   >
@@ -234,8 +234,8 @@ const InfoScreen = ({ navigation, route }) => {
                 >
                   <Svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={150}
-                    height={150}
+                    width={80}
+                    height={80}
                     viewBox="0 0 24 24"
                     fill="red"
                   >
@@ -248,8 +248,8 @@ const InfoScreen = ({ navigation, route }) => {
                 >
                   <Svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={150}
-                    height={150}
+                    width={80}
+                    height={80}
                     viewBox="0 0 24 24"
                     fill="red"
                   >
@@ -265,8 +265,8 @@ const InfoScreen = ({ navigation, route }) => {
               >
                 <Svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={150}
-                  height={150}
+                  width={80}
+                  height={80}
                   viewBox="0 0 24 24"
                   fill="green"
                 >
@@ -278,8 +278,8 @@ const InfoScreen = ({ navigation, route }) => {
               >
                 <Svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={150}
-                  height={150}
+                  width={80}
+                  height={80}
                   viewBox="0 0 24 24"
                   fill="red"
                 >
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
   SectionStyle2: {
     flexDirection: "row",
     justifyContent:'space-around',
-    marginBottom: 20,
+    // marginBottom: 20,
     marginLeft: 35,
     marginRight: 35,
     margin: 10,
