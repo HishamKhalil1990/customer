@@ -4,14 +4,36 @@ import {
   createStackNavigator,
   CardStyleInterpolators,
 } from "@react-navigation/stack";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import LoginScreen from "./Screens/LoginScreen";
 import InfoScreen from "./Screens/InfoScreen";
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 const Stack = createStackNavigator();
 
 export default function App() {
+
+  const [orientation, setOrientation] = useState(null);
+
+  useEffect(() => {
+    const subscription = ScreenOrientation.addOrientationChangeListener(
+      handleOrientationChange
+    );
+    changeScreenOrientation(ScreenOrientation.OrientationLock.PORTRAIT_DOWN)
+    return () => {
+      ScreenOrientation.removeOrientationChangeListeners(subscription);
+    };
+  },[])
+
+  const handleOrientationChange = (o) => {
+    setOrientation(o.orientationInfo.orientation);
+  };
+
+  async function changeScreenOrientation(orientation) {
+    await ScreenOrientation.lockAsync(orientation);
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator

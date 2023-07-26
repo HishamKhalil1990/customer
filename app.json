@@ -21,6 +21,14 @@
       "package": "com.alrayhan.customer",
       "versionCode": 1
     },
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     },

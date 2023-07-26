@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "http://192.168.90.15:3030/rate";
+const baseURL = "http://localhost:3030/rate"; 
 
 const getBranches = async () => {
   return axios({
